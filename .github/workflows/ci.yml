@@ -62,7 +62,7 @@ jobs:
       
     - name: Package it all up
       shell: bash
-      run: cd output && if [ "${{ matrix.output }}" = "zip" ]; then 7z a -r -tzip ../out.zip .; else tar -czvf ../out.tar.gz -C output *; fi 
+      run: cd output && if [ "${{ matrix.output }}" = "zip" ]; then 7z a -r -tzip ../out.zip .; else tar -czvf ../out.tar.gz *; fi 
 
     - name: Get Release File Name & Upload URL
       id: get_release_info
