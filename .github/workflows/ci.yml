@@ -27,7 +27,7 @@ jobs:
 
     - name: Package it all up
       shell: bash
-      run: cd profiles && if [ "${{ matrix.output }}" = "zip" ]; then 7z a -r -tzip ../out.zip *.md *.ini; else tar -czvf ../out.tar.gz *.md *.ini; fi 
+      run: cd profiles && if [ "${{ matrix.output }}" = "zip" ]; then 7z a -r -tzip ../out.zip .; else tar -czvf ../out.tar.gz .; fi 
 
     - name: Create Release
       id: create_release
