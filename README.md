@@ -2,10 +2,14 @@
 This is a collection of third-party 3D filament profiles for PrusaSlicer.
 
 ## Download
-The latest files can be downloaded via zip [here](https://github.com/richardsondev/PrusaSlicer-3D-Filament-Profiles/releases/latest/download/PrusaSlicer-3D-Filament-Profiles.zip).
+The latest files can be downloaded via [zip](https://github.com/richardsondev/PrusaSlicer-3D-Filament-Profiles/releases/latest/download/PrusaSlicer-3D-Filament-Profiles.zip) and [tar.gz](https://github.com/richardsondev/PrusaSlicer-3D-Filament-Profiles/releases/latest/download/PrusaSlicer-3D-Filament-Profiles.tar.gz).
 
-## How to install
-After PrusaSlicer has been run at least once, open `%appdata%\PrusaSlicer` on your local machine and copy the ini files you require within the `filament` and `print` folders.
+## How to install profiles
+### Windows
+After PrusaSlicer has been run at least once, open `%appdata%\PrusaSlicer` on your local machine. Copy the ini files you require within the `filament` and `print` folders.
+
+### Linux / Mac
+After PrusaSlicer has been run at least once, find the `PrusaSlicer` that was created during install on your local machine. Copy the ini files you require within the `filament` and `print` folders.
 
 ## Included filament profiles
 | Brand     | Type            | Example Purchase Link                        |
