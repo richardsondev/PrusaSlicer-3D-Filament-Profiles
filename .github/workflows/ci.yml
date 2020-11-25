@@ -49,4 +49,4 @@ jobs:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./out.${{ matrix.output }}
         asset_name: PrusaSlicer-3D-Filament-Profiles.${{ matrix.output }}
-        asset_content_type:${{ matrix.content }}
+        asset_content_type: ${{ matrix.content }}
