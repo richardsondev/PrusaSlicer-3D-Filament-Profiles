@@ -10,17 +10,17 @@ jobs:
     steps:
     - uses: actions/checkout@v1
       name: Checkout Code
-    - name: Set variables
+    - name: Get tag
       id: vars
-      run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+      run: echo "::set-output name=tag::$(date +'%Y%m%d-%H%M%S')-$(git rev-parse --short HEAD)"
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ steps.vars.outputs.sha_short }}
-        release_name: Release ${{ steps.vars.outputs.sha_short }}
+        tag_name: ${{ steps.vars.outputs.tag }}
+        release_name: Release ${{ steps.vars.outputs.tag }}
         draft: false
         prerelease: false
         
