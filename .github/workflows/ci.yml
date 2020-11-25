@@ -8,10 +8,11 @@ jobs:
     name: Create Release
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v1
+      name: Checkout Code
     - name: Set variables
       id: vars
       run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
-      
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
@@ -20,6 +21,7 @@ jobs:
       with:
         tag_name: ${{ steps.vars.outputs.sha_short }}
         release_name: Release ${{ steps.vars.outputs.sha_short }}
+        body: New release ${{ steps.vars.outputs.sha_short }}
         draft: false
         prerelease: false
         
