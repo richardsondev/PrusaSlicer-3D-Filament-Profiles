@@ -56,10 +56,14 @@ jobs:
       name: Load Release URL File from release job
       with:
         name: release_url
-
+        
+    - name: Operate and copy files to output
+      shell: bash
+      run: mkdir output && cp -r ./profiles ./output/ && cp README.md ./output/
+      
     - name: Package it all up
       shell: bash
-      run: cd profiles && if [ "${{ matrix.output }}" = "zip" ]; then 7z a -r -tzip ../out.zip .; else tar -czvf ../out.tar.gz .; fi 
+      run: if [ "${{ matrix.output }}" = "zip" ]; then 7z a -r -tzip ./out.zip ./output/; else tar -czvf ./out.tar.gz -C output .; fi 
 
     - name: Get Release File Name & Upload URL
       id: get_release_info
