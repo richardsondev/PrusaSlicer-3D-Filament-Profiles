@@ -13,8 +13,8 @@ jobs:
       name: Checkout Code
 
     - name: Set variables
-        id: vars
-        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+      id: vars
+      run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
         
     - name: Zip it all up
       shell: bash
