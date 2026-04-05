@@ -3,6 +3,9 @@ name: ci
 on:
   push
  
+permissions:
+  contents: write
+
 jobs:
   release:
     name: Create Release
