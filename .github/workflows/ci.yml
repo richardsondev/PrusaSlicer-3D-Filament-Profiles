@@ -6,12 +6,15 @@ on:
 permissions:
   contents: write
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   release:
     name: Create Release
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v4
       name: Checkout Code
     - name: Get tag
       id: vars
@@ -31,7 +34,7 @@ jobs:
       run: echo "${{ steps.create_release.outputs.upload_url }}" > release_url.txt
       
     - name: Save Release URL File for publish
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       with:
         name: release_url
         path: release_url.txt
@@ -51,10 +54,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v4
       name: Checkout Code
 
-    - uses: actions/download-artifact@v1
+    - uses: actions/download-artifact@v4
       name: Load Release URL File from release job
       with:
         name: release_url
